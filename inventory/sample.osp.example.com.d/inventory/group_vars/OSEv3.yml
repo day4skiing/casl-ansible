@@ -56,6 +56,15 @@ openshift_metrics_cassandra_storage_type: dynamic
 openshift_metrics_cassandra_pvc_size: 40G
 openshift_metrics_duration: 2
 
+# Cinder registry storage
+# remove all.yml:casl_storage_registry_kind to use below settings
+#openshift_hosted_registry_storage_kind: openstack
+#openshift_hosted_registry_storage_access_modes: ['ReadWriteOnce']
+#openshift_hosted_registry_storage_openstack_filesystem: ext4
+#openshift_hosted_registry_storage_openstack_volumeID: <UUID from OSP>
+#openshift_hosted_registry_storage_volume_size: 20 <value from OSP>
+#
+
 # HTPASSWD Identity Provider
 # - update to other types of auth providers if necessary (i.e: LDAP, OAuth, ...)
 openshift_master_identity_providers:

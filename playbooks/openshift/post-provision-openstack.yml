@@ -23,7 +23,7 @@
   - import_tasks: pre-tasks.yml
   roles:
   - role: openshift-ansible-contrib/roles/dns-views
-  - role: infra-ansible/roles/dns-server
+  - role: infra-ansible/roles/config-dns-server
 
 # Build and process DNS Records
 - hosts: localhost
@@ -53,7 +53,7 @@
 # provision cinder volume
 - import_playbook: cinder-registry.yml
   when:
-  - openshift_hosted_registry_storage_kind is defined
-  - openshift_hosted_registry_storage_kind == "openstack"
-  - openshift_hosted_registry_storage_openstack_volumeID is not defined
+  - casl_storage_registry_kind is defined
+  - casl_storage_registry_kind == "cinder"
+  - casl_storage_registry_create | default(False)
 

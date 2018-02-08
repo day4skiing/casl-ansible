@@ -8,22 +8,21 @@
       display_name: "{{ env_id }}.{{ dns_domain }}-registry"
       size: "{{ casl_registry_size | default(20) }}"
       purpose: "ose_registry"
-  roles: 
+  roles:
   - infra-ansible/roles/osp/admin-volume
 
 - hosts: OSEv3
   tasks:
   - name: "set registry fact"
-    set_fact: 
+    set_fact:
       openshift_hosted_registry_storage_kind: openstack
       openshift_hosted_registry_storage_openstack_volumeID: "{{ disk.volume.id }}"
       openshift_hosted_registry_storage_volume_size: "{{ disk.volume.size }}Gi"
       openshift_hosted_registry_storage_access_modes: ['ReadWriteOnce']
       openshift_hosted_registry_storage_openstack_filesystem: ext4
-    with_items: 
+    with_items:
     -  "{{ hostvars['localhost'].os_volumes.results }}"
-    when: 
+    when:
     - disk.item.purpose  == "ose_registry"
     loop_control:
       loop_var: disk
-

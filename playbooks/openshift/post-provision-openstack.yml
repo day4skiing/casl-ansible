@@ -18,6 +18,7 @@
 # provision cinder volume
 - import_playbook: cinder-registry.yml
   when:
-  - casl_storage_registry_kind is defined
-  - casl_storage_registry_kind == "cinder"
-  - casl_storage_registry_create | default(False)
+  - openshift_hosted_registry_storage_kind is defined
+  - openshift_hosted_registry_storage_kind == "openstack"
+  - openshift_hosted_registry_storage_openstack_volumeID is not defined
+  

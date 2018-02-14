@@ -45,9 +45,7 @@ The following is just an example on how the `sample.osp.example.com` inventory c
 
 2) Edit `~/src/casl-ansible/inventory/sample.osp.example.com.d/inventory/group_vars/all.yml` to match your cloud provider/environment/project/tenant. See comments in the file for more detailed information on how to fill these in. To utilize OSP cinder storage for the registry add the following to `all.yml`
 ```
-casl_storage_registry_kind: 'cinder'
-casl_storage_registry_create: True
-
+openshift_hosted_registry_storage_kind: openstack
 ```
 
 3) Edit `~/src/casl-ansible/inventory/sample.osp.example.com.d/inventory/group_vars/OSEv3.yml` for your OpenShift specific configuration. See comments in the file for more detailed information on how to fill these in.

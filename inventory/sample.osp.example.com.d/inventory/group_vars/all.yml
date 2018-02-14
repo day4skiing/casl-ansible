@@ -93,7 +93,14 @@ rhsm_password: ''
 # leave commented out if you want to `--auto-attach` a pool
 #rhsm_pool: ''
 
-# enable automatic provisioning of cinder registry volume on OSP
-casl_storage_registry_kind: 'cinder'
-casl_storage_registry_create: True
-#casl_registry_size: 20
+# auto provisioned Cinder registry storage
+openshift_hosted_registry_storage_kind: openstack
+#openshift_hosted_registry_storage_volume_size: 20
+
+# User provisioned Cinder registry storage
+#openshift_hosted_registry_storage_kind: openstack
+#openshift_hosted_registry_storage_access_modes: ['ReadWriteOnce']
+#openshift_hosted_registry_storage_openstack_filesystem: ext4
+#openshift_hosted_registry_storage_volume_size: 20 <volume size from OSP>
+#openshift_hosted_registry_storage_openstack_volumeID: <UUID from OSP>
+#

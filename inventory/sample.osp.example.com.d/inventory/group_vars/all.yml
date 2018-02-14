@@ -93,14 +93,16 @@ rhsm_password: ''
 # leave commented out if you want to `--auto-attach` a pool
 #rhsm_pool: ''
 
-# auto provisioned Cinder registry storage
+## Cinder Registry Storage ##
+# -Auto provisioned Cinder registry storage variables
 openshift_hosted_registry_storage_kind: openstack
 #openshift_hosted_registry_storage_volume_size: 20
 
-# User provisioned Cinder registry storage
+# -User Provisioned Cinder registry storage variables
+# To leverage an existing Cinder volume already created 
+# in OpenStack use the following variables.
 #openshift_hosted_registry_storage_kind: openstack
 #openshift_hosted_registry_storage_access_modes: ['ReadWriteOnce']
 #openshift_hosted_registry_storage_openstack_filesystem: ext4
 #openshift_hosted_registry_storage_volume_size: 20 <volume size from OSP>
 #openshift_hosted_registry_storage_openstack_volumeID: <UUID from OSP>
-#
